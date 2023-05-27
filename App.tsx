@@ -24,6 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Config from 'react-native-config';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -72,6 +73,9 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Text>mm</Text>
+        <Text>{Config.profile}</Text>
+        <Text>mm</Text>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,

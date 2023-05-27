@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.randomcardbattle"
+    namespace "l.s.y.randomcardbattle"
     defaultConfig {
-        applicationId "com.randomcardbattle"
+        applicationId "l.s.y.randomcardbattle"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -173,3 +173,10 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 project.ext.vectoricons = [
         iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf' ] // Name of the font files you want to copy
 ]
+
+//project.ext.envConfigFiles = [
+//        debug: ".env.prd",
+//        release: ".env.prd",
+//        anothercustombuild: ".env",
+//]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
