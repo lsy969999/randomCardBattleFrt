@@ -93,13 +93,15 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "l.s.y.randomcardbattle"
+    namespace "l.sy.randomcardbattle"
     defaultConfig {
-        applicationId "l.s.y.randomcardbattle"
+        applicationId "l.sy.randomcardbattle"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        //reactNativeConfig 다른 패키지명 설정시 작동하게하려면 필요
+        resValue "string", "build_config_package", "l.sy.randomcardbattle"
     }
 
     splits {
@@ -121,6 +123,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            debuggable true
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
@@ -128,6 +131,18 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+    flavorDimensions = ["flavors"]
+    productFlavors{
+        dev{
+            dimension "flavors"
+            applicationIdSuffix ".dev"
+            versionName "1.0.0"
+        }
+        prd{
+            dimension "flavors"
+            versionName "1.0.0"
         }
     }
 

@@ -15,6 +15,8 @@ react-native-vector-icons
 https://www.npmjs.com/package/react-native-vector-icons
 npm install --save react-native-vector-icons
 
-todo 
+env에 갈아끼는방식으로
 https://www.npmjs.com/package/react-native-config
+
+
 

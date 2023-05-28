@@ -1,4 +1,4 @@
-package l.s.y.randomcardbattle;
+package l.sy.randomcardbattle;
 
 import androidx.annotation.NonNull;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import l.s.y.randomcardbattle.modules.SampleModule;
+import l.sy.randomcardbattle.modules.SampleModule;
 
 public class MyAppPackage implements ReactPackage {
     @NonNull

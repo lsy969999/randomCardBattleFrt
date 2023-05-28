@@ -1,4 +1,4 @@
-package l.s.y.randomcardbattle;
+package l.sy.randomcardbattle;
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

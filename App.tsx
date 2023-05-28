@@ -88,7 +88,7 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         {/* <Header /> */}
-        <Text>mm</Text>
+        <Text>mm2</Text>
         <Text>{Config.profile}</Text>
         <Text>mm</Text>
 
