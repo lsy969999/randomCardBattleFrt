@@ -17,6 +17,8 @@
 		D6F911A82A1BDCFB00BEC46E /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = D6F911A72A1BDCFB00BEC46E /* Fonts */; };
 		D6F911AB2A22700A00BEC46E /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D6F911AA2A22700A00BEC46E /* Config.xcconfig */; };
 		D6F911AC2A22700A00BEC46E /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D6F911AA2A22700A00BEC46E /* Config.xcconfig */; };
+		D6F911B02A2318DA00BEC46E /* SampleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F911AF2A2318DA00BEC46E /* SampleModule.swift */; };
+		D6F911B22A232D1300BEC46E /* SampleModule.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F911B12A232D1300BEC46E /* SampleModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-randomCardBattle-randomCardBattleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-randomCardBattle-randomCardBattleTests.release.xcconfig"; path = "Target Support Files/Pods-randomCardBattle-randomCardBattleTests/Pods-randomCardBattle-randomCardBattleTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6F911A72A1BDCFB00BEC46E /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		D6F911AA2A22700A00BEC46E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		D6F911AE2A2318D900BEC46E /* randomCardBattle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "randomCardBattle-Bridging-Header.h"; sourceTree = "<group>"; };
+		D6F911AF2A2318DA00BEC46E /* SampleModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModule.swift; sourceTree = "<group>"; };
+		D6F911B12A232D1300BEC46E /* SampleModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleModule.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -91,6 +96,7 @@
 		13B07FAE1A68108700A75B9A /* randomCardBattle */ = {
 			isa = PBXGroup;
 			children = (
+				D6F911AD2A2318BA00BEC46E /* modules */,
 				D6F911A72A1BDCFB00BEC46E /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -155,6 +161,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D6F911AD2A2318BA00BEC46E /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				D6F911AF2A2318DA00BEC46E /* SampleModule.swift */,
+				D6F911AE2A2318D900BEC46E /* randomCardBattle-Bridging-Header.h */,
+				D6F911B12A232D1300BEC46E /* SampleModule.m */,
+			);
+			name = modules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,7 +230,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -423,7 +439,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				D6F911B22A232D1300BEC46E /* SampleModule.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				D6F911B02A2318DA00BEC46E /* SampleModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +460,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-randomCardBattle-randomCardBattleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -469,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-randomCardBattle-randomCardBattleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = randomCardBattleTests/Info.plist;
@@ -511,6 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "l.s.y.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = randomCardBattle;
+				SWIFT_OBJC_BRIDGING_HEADER = "randomCardBattle-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -538,6 +559,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "l.s.y.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = randomCardBattle;
+				SWIFT_OBJC_BRIDGING_HEADER = "randomCardBattle-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

@@ -13,8 +13,10 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  Button,
   useColorScheme,
   View,
+  NativeModules,
 } from 'react-native';
 
 import {
@@ -31,6 +33,7 @@ type SectionProps = PropsWithChildren<{
 }>;
 
 function Section({children, title}: SectionProps): JSX.Element {
+
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -58,10 +61,22 @@ function Section({children, title}: SectionProps): JSX.Element {
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+  const {SampleModule} = NativeModules;
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  const testOnPress = async (name: any)=>{
+    let eventid;
+    try{
+      eventid = await SampleModule.sampleCall(name);
+    } catch (e){
+      console.error(e)
+    }
+    
+    console.log('eventID: ', eventid);
+  }
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -72,11 +87,13 @@ function App(): JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
+        {/* <Header /> */}
         <Text>mm</Text>
         <Text>{Config.profile}</Text>
         <Text>mm</Text>
-        <View
+
+        <Button title="btn" onPress={()=>testOnPress('21')} />
+        {/* <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
@@ -94,7 +111,7 @@ function App(): JSX.Element {
             Read the docs to discover what to do next:
           </Section>
           <LearnMoreLinks />
-        </View>
+        </View> */}
       </ScrollView>
     </SafeAreaView>
   );
