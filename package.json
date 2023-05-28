@@ -5,7 +5,8 @@
   "scripts": {
     "android:devDebug": "react-native run-android --mode=devDebug --appIdSuffix 'dev'",
     "android:prdDebug": "react-native run-android --mode=prdDebug",
-    "ios": "react-native run-ios",
+    "ios:dev": "react-native run-ios --scheme 'devRandomCardBattle'",
+    "ios:prd": "react-native run-ios --scheme 'randomCardBattle'",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
