@@ -53,7 +53,8 @@ target 'randomCardBattle' do
     # Note that if you have use_frameworks! enabled, Flipper will not work and
     # you should disable the next line.
     #:flipper_configuration => flipper_config,
-    :flipper_configuration => FlipperConfiguration.enabled(["Debug"], { 'Flipper' => '0.191.1' }),
+    #Debug만 해야할거같긴한데, 링크오류가난다. 일단 Release 도추가
+    :flipper_configuration => FlipperConfiguration.enabled(["Debug","Release"], { 'Flipper' => '0.191.1' }),
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )

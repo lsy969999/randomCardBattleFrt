@@ -137,11 +137,19 @@ android {
     flavorDimensions = ["flavors"]
     productFlavors{
         dev{
+            //TODO appIcon
+            manifestPlaceholders=[
+                    appName:"DevRandCardBattle",
+            ]
             dimension "flavors"
             applicationIdSuffix ".dev"
             versionName "1.0.0"
         }
         prd{
+            //TODO appIcon
+            manifestPlaceholders=[
+                    appName:"@string/app_name",
+            ]
             dimension "flavors"
             versionName "1.0.0"
         }
