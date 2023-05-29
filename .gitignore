@@ -1,6 +1,11 @@
 # react-native-config codegen
 ios/tmp.xcconfig
 
+firebase
+android/app/src/debug/google-services.json
+android/app/src/release/google-services.json
+ios/randomCardBattle/Firebase/Debug/Google-Service-Info.plist
+ios/randomCardBattle/Firebase/Release/Google-Service-Info.plist
 
 .env
 .env.dev
