@@ -8,3 +8,6 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+
+#react native config torubleshooting android
+-keep class l.sy.randomcardbattle.BuildConfig { *; }

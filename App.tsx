@@ -89,7 +89,7 @@ function App(): JSX.Element {
         style={backgroundStyle}>
         {/* <Header /> */}
         <Text>mm2</Text>
-        <Text>{Config.profile}</Text>
+        <Text>{Config.PROFILE}</Text>
         <Text>mm</Text>
 
         <Button title="btn" onPress={()=>testOnPress('21')} />

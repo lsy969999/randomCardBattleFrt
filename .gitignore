@@ -1,5 +1,10 @@
-.env
+# react-native-config codegen
+ios/tmp.xcconfig
 
+
+.env
+.env.dev
+.env.prd
 # OSX
 #
 .DS_Store
