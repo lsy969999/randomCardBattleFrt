@@ -165,10 +165,6 @@ android {
 }
 
 dependencies {
-//RN-Firebase
-//    implementation platform('com.google.firebase:firebase-bom:32.0.0')
-//    implementation 'com.google.firebase:firebase-analytics'
-
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
@@ -180,6 +176,7 @@ dependencies {
     }
 
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}")
+//    debugImplementation 'com.facebook.flipper:flipper-fresco-plugin:0.182.0'
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {

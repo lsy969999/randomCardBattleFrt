@@ -1,6 +1,17 @@
 package l.sy.randomcardbattle;
 
 import android.app.Application;
+
+//import com.facebook.flipper.android.AndroidFlipperClient;
+//import com.facebook.flipper.android.utils.FlipperUtils;
+//import com.facebook.flipper.core.FlipperClient;
+//import com.facebook.flipper.plugins.inspector.DescriptorMapping;
+//import com.facebook.flipper.plugins.inspector.InspectorFlipperPlugin;
+import com.facebook.flipper.android.AndroidFlipperClient;
+import com.facebook.flipper.android.utils.FlipperUtils;
+import com.facebook.flipper.core.FlipperClient;
+import com.facebook.flipper.plugins.inspector.DescriptorMapping;
+import com.facebook.flipper.plugins.inspector.InspectorFlipperPlugin;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
@@ -58,6 +69,12 @@ public class MainApplication extends Application implements ReactApplication {
             // If you opted-in for the New Architecture, we load the native entry point for this app.
             DefaultNewArchitectureEntryPoint.load();
         }
+        //Flipper
+//        if (BuildConfig.DEBUG && FlipperUtils.shouldEnableFlipper(this)) {
+//            final FlipperClient client = AndroidFlipperClient.getInstance(this);
+//            client.addPlugin(new InspectorFlipperPlugin(this, DescriptorMapping.withDefaults()));
+//            client.start();
+//        }
         ReactNativeFlipper.initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
     }
 }

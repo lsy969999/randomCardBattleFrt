@@ -25,3 +25,10 @@ https://froggydisk.github.io/sixteenth-post/
 
 https://dev.to/tungcao_dev/firebase-googleservice-info-plist-with-different-build-schemes-environment-14oj
 
+
+플리퍼
+https://fbflipper.com/docs/getting-started/android-native/
+https://velog.io/@bang9dev/RN-CheatSheet-Flipper-%EC%8B%A4%EC%A0%9C-%EA%B8%B0%EA%B8%B0-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0
+
+flipper ios idb, anroid adb 필요
+
