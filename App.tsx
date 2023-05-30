@@ -21,119 +21,51 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Config from 'react-native-config';
+import { NavigationContainer,  } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ThemeProvider, createTheme , FAB} from '@rneui/themed';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Main from './views/Main';
+import DebugMain from './views/debug/DebugMain';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const theme = createTheme({
+  lightColors: {
+    primary: '#e7e7e8',
+  },
+  darkColors: {
+    primary: '#000',
+  },
+  mode: 'dark',
+})
 
-function Section({children, title}: SectionProps): JSX.Element {
 
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+type AppStackParamList = {
+  Main: undefined;
+  DebugMain: undefined;
+};
+const Stack = createNativeStackNavigator<AppStackParamList>();
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-  const {SampleModule} = NativeModules;
+ 
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const testOnPress = async (name: any)=>{
-    let eventid;
-    try{
-      eventid = await SampleModule.sampleCall(name);
-    } catch (e){
-      console.error(e)
-    }
-    
-    console.log('eventID: ', eventid);
-  }
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        {/* <Header /> */}
-        <Text>mm2</Text>
-        <Text>{Config.PROFILE}</Text>
-        <Text>mm</Text>
-
-        <Button title="btn" onPress={()=>testOnPress('21')} />
-        {/* <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View> */}
-      </ScrollView>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <ThemeProvider theme={theme}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Main" component={Main} />
+            <Stack.Screen name="DebugMain" component={DebugMain} /> 
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
 export default App;
